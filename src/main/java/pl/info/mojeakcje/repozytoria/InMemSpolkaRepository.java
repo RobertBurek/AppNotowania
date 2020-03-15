@@ -6,13 +6,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author Sourabh Sharma
- */
-public class InMemRestaurantRepository implements SpolkaRepository<Spolka, String> {
+public class InMemSpolkaRepository implements SpolkaRepository<Spolka, String> {
+
     private Map<String, Spolka> entities;
 
-    public InMemRestaurantRepository() {
+    public InMemSpolkaRepository() {
         entities = new HashMap();
     }
 
@@ -43,13 +41,13 @@ public class InMemRestaurantRepository implements SpolkaRepository<Spolka, Strin
     @Override
     public boolean contains(String id) {
         throw new UnsupportedOperationException("Metoda nie została zaimplementowana.");
-        // Aby zmienić treść generowanych metod, wybierz opcję Tools/Templates.
+        // TODO zaimplementować
     }
 
     @Override
     public Spolka get(String id) {
         throw new UnsupportedOperationException("Metoda nie została zaimplementowana.");
-        // Aby zmienić treść generowanych metod, wybierz opcję Tools/Templates.
+        // TODO zaimplementować
     }
 
     @Override

@@ -8,5 +8,4 @@ public class BaseEntity<T> extends Entity<T> {
         super.id = id;
         super.name = name;
     }
-
 }
