@@ -9,4 +9,5 @@ public abstract class ReadOnlyBaseService<TE, T> {
     ReadOnlyBaseService(Repository<TE, T> repository) {
         this.repository = repository;
     }
+
 }

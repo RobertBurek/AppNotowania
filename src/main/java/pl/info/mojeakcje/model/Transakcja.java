@@ -12,6 +12,7 @@ public class Transakcja extends BaseEntity<BigDecimal> {
 
     public Transakcja(String name, BigDecimal id, String transakcja) {
         super(id, name);
+        this.transakcja = transakcja;
     }
 
     public String getTransakcja() {
