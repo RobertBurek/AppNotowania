@@ -1,4 +1,4 @@
-package pl.info.mojeakcje.model;
+package pl.info.mojeakcje.modele;
 
 import java.math.BigInteger;
 

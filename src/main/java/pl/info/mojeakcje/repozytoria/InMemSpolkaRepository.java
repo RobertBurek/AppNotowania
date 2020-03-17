@@ -1,6 +1,6 @@
 package pl.info.mojeakcje.repozytoria;
 
-import pl.info.mojeakcje.model.Spolka;
+import pl.info.mojeakcje.modele.Spolka;
 
 import java.util.Collection;
 import java.util.HashMap;

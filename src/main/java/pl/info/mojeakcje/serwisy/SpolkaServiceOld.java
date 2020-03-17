@@ -1,16 +1,16 @@
-package pl.info.mojeakcje.serwis;
+package pl.info.mojeakcje.serwisy;
 
-import pl.info.mojeakcje.model.Spolka;
+import pl.info.mojeakcje.modele.Spolka;
 import pl.info.mojeakcje.repozytoria.SpolkaRepository;
 
 import java.math.BigInteger;
 import java.util.Collection;
 
-public class SpolkaService extends BaseService<Spolka, BigInteger> {
+public class SpolkaServiceOld extends BaseService<Spolka, BigInteger> {
 
     private SpolkaRepository<Spolka, String> spolkaRepository;
 
-    public SpolkaService(SpolkaRepository repository) {
+    public SpolkaServiceOld(SpolkaRepository repository) {
         super(repository);
         spolkaRepository = repository;
     }

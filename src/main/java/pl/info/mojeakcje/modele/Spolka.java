@@ -1,15 +1,18 @@
-package pl.info.mojeakcje.model;
+package pl.info.mojeakcje.modele;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author Robert Burek
+ */
 public class Spolka extends BaseEntity<String> {
 
     private DaneOSpolce daneOSpolce;
     private List<InfoRynkoweOSpolce> listaInfoRynkowe = new ArrayList<>();
     private List<DaneDzienne> listaDaneDzien = new ArrayList<>();
     private List<Transakcja> listaTrans = new ArrayList<>();
-
 
     public Spolka(String id, String name, DaneOSpolce daneOSpolce) {
         super(id, name);

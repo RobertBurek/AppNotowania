@@ -1,6 +1,6 @@
 package pl.info.mojeakcje.repozytoria;
 
-import pl.info.mojeakcje.model.Entity;
+import pl.info.mojeakcje.modele.Entity;
 
 import java.util.Collection;
 

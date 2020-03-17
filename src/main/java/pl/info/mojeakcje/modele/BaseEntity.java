@@ -1,4 +1,4 @@
-package pl.info.mojeakcje.model;
+package pl.info.mojeakcje.modele;
 
 public class BaseEntity<T> extends Entity<T> {
 

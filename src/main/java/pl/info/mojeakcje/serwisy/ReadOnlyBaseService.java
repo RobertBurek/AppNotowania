@@ -1,4 +1,4 @@
-package pl.info.mojeakcje.serwis;
+package pl.info.mojeakcje.serwisy;
 
 import pl.info.mojeakcje.repozytoria.Repository;
 
