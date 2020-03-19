@@ -1,5 +1,6 @@
 package pl.info.mojeakcje.repozytoria;
 
+import org.springframework.stereotype.Repository;
 import pl.info.mojeakcje.kontrolery.SpolkaController;
 import pl.info.mojeakcje.modele.DaneOSpolce;
 import pl.info.mojeakcje.modele.Spolka;
@@ -11,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+@Repository("spolkaRepository")
 public class InMemSpolkaRepository implements SpolkaRepository<Spolka, String> {
 
     protected static final Logger logger = Logger.getLogger(SpolkaController.class.getName());
@@ -57,12 +59,6 @@ public class InMemSpolkaRepository implements SpolkaRepository<Spolka, String> {
         }
         return false;
     }
-
-//   Stara implementacja metody
-//    @Override
-//    public boolean containsName(String name) {
-//        return entities.containsKey(name);
-//    }
 
     /**
      * @param name

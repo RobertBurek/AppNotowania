@@ -1,6 +1,5 @@
 package pl.info.mojeakcje.valueobject;
 
-
 import pl.info.mojeakcje.modele.DaneDzienne;
 import pl.info.mojeakcje.modele.DaneOSpolce;
 import pl.info.mojeakcje.modele.InfoRynkoweOSpolce;
@@ -10,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author Robert Burek
  */
 public class SpolkaVO {
@@ -29,7 +27,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public String getId() {
@@ -37,7 +34,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param id
      */
     public void setId(String id) {
@@ -45,7 +41,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public String getName() {
@@ -53,7 +48,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param name
      */
     public void setName(String name) {
@@ -61,7 +55,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public DaneOSpolce getDaneOSpolce() {
@@ -69,7 +62,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param daneOSpolce
      */
     public void setDaneOSpolce(DaneOSpolce daneOSpolce) {
@@ -77,7 +69,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public List<InfoRynkoweOSpolce> getListaInfoRynkowe() {
@@ -85,7 +76,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param listaInfoRynkowe
      */
     public void setListaInfoRynkowe(List<InfoRynkoweOSpolce> listaInfoRynkowe) {
@@ -93,7 +83,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public List<DaneDzienne> getListaDaneDzien() {
@@ -101,7 +90,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param listaDaneDzien
      */
     public void setListaDaneDzien(List<DaneDzienne> listaDaneDzien) {
@@ -109,7 +97,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @return
      */
     public List<Transakcja> getListaTrans() {
@@ -117,7 +104,6 @@ public class SpolkaVO {
     }
 
     /**
-     *
      * @param listaTrans
      */
     public void setListaTrans(List<Transakcja> listaTrans) {
@@ -125,8 +111,8 @@ public class SpolkaVO {
     }
 
     /**
-     * Overridden toString() method that return String presentation of the
-     * Object
+     * Przesłonięta metoda toString (), która zwraca prezentację ciągu
+     *
      *
      * @return
      */
@@ -135,8 +121,8 @@ public class SpolkaVO {
         return new StringBuilder("{id: ").append(id)
                 .append(", name: ").append(name)
                 .append(", dane o spółce: ").append(daneOSpolce)
-                .append(", ostatnie info rynkowe: ").append(listaInfoRynkowe.get(listaInfoRynkowe.size()-1))
-                .append(", ostatnie notowania: ").append(listaDaneDzien.get(listaDaneDzien.size()-1))
+                .append(", ostatnie info rynkowe: ").append(listaInfoRynkowe.get(listaInfoRynkowe.size() - 1))
+                .append(", ostatnie notowania: ").append(listaDaneDzien.get(listaDaneDzien.size() - 1))
                 .append("}").toString();
     }
 }

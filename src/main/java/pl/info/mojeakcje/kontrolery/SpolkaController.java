@@ -21,14 +21,8 @@ import java.util.logging.Logger;
 @RequestMapping("/v1/spolki")
 public class SpolkaController {
 
-    /**
-     *
-     */
     protected static final Logger logger = Logger.getLogger(SpolkaController.class.getName());
 
-    /**
-     *
-     */
     protected SpolkaService spolkaService;
 
     /**
@@ -37,6 +31,26 @@ public class SpolkaController {
     @Autowired
     public SpolkaController(SpolkaService spolkaService) {
         this.spolkaService = spolkaService;
+    }
+
+    /**
+     * <code>http://.../v1/spolki</code> zwróci
+     * listę spółek
+     *
+     * @return lista spółek.
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<Collection<Spolka>> getAll() {
+        logger.info(String.format("SpolkaService metoda getAll() wywołana: %s s", spolkaService.getClass().getName()));
+        Collection<Spolka> spolki;
+        try {
+            spolki = spolkaService.getAll();
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, "Wyjątek metody findByName", ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return spolki.size() > 0 ? new ResponseEntity<>(spolki, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -49,7 +63,7 @@ public class SpolkaController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Collection<Spolka>> findByName(@RequestParam("name") String name) {
-        logger.info(String.format("spółka-service metoda findByName() wywołana: %s for %s ", spolkaService.getClass().getName(), name));
+        logger.info(String.format("SpolkaService metoda findByName() wywołana: %s for %s ", spolkaService.getClass().getName(), name));
         name = name.trim().toLowerCase();
         Collection<Spolka> spolki;
         try {
@@ -72,16 +86,16 @@ public class SpolkaController {
      */
     @RequestMapping(value = "/{spolka_id}", method = RequestMethod.GET)
     public ResponseEntity<Entity> findById(@PathVariable("spolka_id") String id) {
-        logger.info(String.format("spółka-service findById() wywołana: {} dla {} ", spolkaService.getClass().getName(), id));
+        logger.info(String.format("spółka-service findById() wywołana: %s dla %s ", spolkaService.getClass().getName(), id));
         id = id.trim();
-        Entity restaurant;
+        Entity spolka;
         try {
-            restaurant = spolkaService.findById(id);
+            spolka = spolkaService.findById(id);
         } catch (Exception ex) {
             logger.log(Level.WARNING, "Wyjątek metody findById.", ex);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return restaurant != null ? new ResponseEntity<>(restaurant, HttpStatus.OK)
+        return spolka != null ? new ResponseEntity<>(spolka, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -93,7 +107,7 @@ public class SpolkaController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Spolka> add(@RequestBody SpolkaVO spolkaVO) {
-        logger.info(String.format("spólka-service add() invoked: %s for %s", spolkaService.getClass().getName(), spolkaVO.getName()));
+        logger.info(String.format("SpolkaService metoda add() wywołana: %s dla %s", spolkaService.getClass().getName(), spolkaVO.getName()));
         System.out.println(spolkaVO);
         Spolka spolka = new Spolka(null, null, null);
         BeanUtils.copyProperties(spolkaVO, spolka);

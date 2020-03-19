@@ -1,4 +1,4 @@
-package pl.info.mojeakcje.maestrodemo;
+package pl.info.mojeakcje;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

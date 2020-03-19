@@ -16,11 +16,12 @@ public interface SpolkaRepository<Spolka, String> extends Repository<Spolka, Str
      * @return
      */
     boolean containsName(String name);
+
     /**
      *
      * @param name
      * @return
      * @throws Exception
      */
-    public Collection<Spolka> findByName(String name) throws Exception;
+    Collection<Spolka> findByName(String name) throws Exception;
 }

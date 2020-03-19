@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.info.mojeakcje.kontrolery.SpolkaController;
 import pl.info.mojeakcje.modele.Entity;
 import pl.info.mojeakcje.modele.Spolka;
+import pl.info.mojeakcje.repozytoria.Repository;
 import pl.info.mojeakcje.repozytoria.SpolkaRepository;
 
 import java.util.ArrayList;
@@ -16,12 +17,8 @@ import java.util.logging.Logger;
  * @author Robert Burek
  */
 @Service("spolkaService")
-public class SpolkaServiceImpl extends BaseService<Spolka, String>
-        implements SpolkaService {
+public class SpolkaServiceImpl extends BaseService<Spolka, String> implements SpolkaService {
 
-    /**
-     *
-     */
     protected static final Logger logger = Logger.getLogger(SpolkaController.class.getName());
 
     private SpolkaRepository<Spolka, String> spolkaRepository;
@@ -93,5 +90,10 @@ public class SpolkaServiceImpl extends BaseService<Spolka, String>
     @Override
     public Collection<Spolka> findByCriteria(Map<String, ArrayList<String>> name) throws Exception {
         throw new UnsupportedOperationException("Metoda jeszcze nie zaimplementowana.");
+    }
+
+    @Override
+    public Collection<Spolka> getAll() {
+        return super.getAll();
     }
 }
